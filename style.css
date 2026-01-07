@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f8f4eb;
+    background-color: white;
     color: #333;
   }
   
@@ -15,7 +15,7 @@ body {
     width: 90%; 
     max-width: 1084px; 
     height: 30px; 
-    background-color: #e8e0cd; 
+    background-color: #d7d6d4; 
     border-radius: 8px;
     display: flex;
     align-items: center; 
