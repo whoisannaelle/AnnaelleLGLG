@@ -448,53 +448,87 @@ body {
   }
 
 /* Section Galerie */
-.gallerie_img {
-    display: flex;
-    flex-direction: column; /* Dispose les images en colonne */
-    align-items: center; /* Centre les images horizontalement */
-    gap: 20px; /* Ajoute un espace entre les images */
-    padding: 20px;
-  }
-
-  .gallery-title {
-    text-align: center; /* Centre le texte horizontalement */
-    font-size: 28px; /* Taille du texte */
-    font-weight: bold; /* Gras pour plus d'impact */
-    margin-bottom: 20px; /* Espace sous le titre */
-    color: #333; /* Couleur du texte */
-  }
-  
-  .gallerie_img img {
-    width: 600px; /* Taille des images ajustée */
-    height: auto; /* Garde les proportions des images */
-    border-radius: 8px; /* Coins arrondis */
-
-  }
-
-  .return-link-container {
-    text-align: left;
-    margin: 10px 20px;
+/* Galerie */
+.project-gallery {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.return-link {
-    font-size: 14px;
-    color: #d92211;
-    text-decoration: none;
-    font-weight: bold;
+.gallery-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
 }
 
-.return-link:hover {
-    text-decoration: underline;
-    color: #f26444;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
-  
-.contenu-principal {
-    flex: 1; /* Prend tout l'espace disponible */
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.gallery-item figcaption {
+    padding: 10px;
+    text-align: center;
+    background: #f9f9f9;
+    font-style: italic;
+    color: #555;
+}
+/* Style pour pdf */
+.pdf-item {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centre verticalement le contenu si nécessaire */
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+    padding: 20px;
 }
 
+.pdf-thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+
+.pdf-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.pdf-link:hover {
+    color: #d92211;
+}
 /* Style pour le footer */
 .footer {
     flex-shrink: 0; /* Empêche le footer de rétrécir */
