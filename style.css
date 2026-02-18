@@ -35,7 +35,52 @@ header nav {
   flex: 1 1 200px; /* min 200px, prend l’espace disponible */
 }
 
+.search-container {
+    margin: 100px auto 40px auto;
+    text-align: center;
+}
 
+#searchInput {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #d92211;
+    font-size: 1rem;
+    outline: none;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 8px rgba(217, 34, 17, 0.4);
+}
+.filter-section {
+    margin: 120px auto 40px;
+    text-align: center;
+}
+
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 2px solid #d92211;
+    background: white;
+    color: #d92211;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #d92211;
+    color: white;
+}
   .menu {
     margin-top: 10px;
     width: 90%; 

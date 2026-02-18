@@ -27,17 +27,29 @@
 
   </div>
 
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Rechercher un projet...">
+     <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="Développement web">Développement web</button>
+        <button class="filter-btn" data-filter="Communication">Communication</button>
+        <button class="filter-btn" data-filter="ux">UX/UI</button>
+        <button class="filter-btn" data-filter="Stage">Stage</button>
+        <button class="filter-btn" data-filter="Graphisme">Graphisme</button>
+    </div>
+</div>
+
   <main class="catalogue">
 
-    <div class="project-card">
+    <div class="project-card" data-category="Communication">
       <img src="ALEP_LOGO_05022025/ALEP_LOGO_x1500-05022025.png" alt="logo ALeP rouge">
       <div class="project-info">
         <h2>Les Éditions ALeP</h2>
-        <p>Produire des contenus pour un profesisonnel</p>
+        <p>Stratégie de communication</p>
         <a href="ALeP.html" class="link">En savoir plus →</a>
       </div>
     </div>
-    <div class="project-card">
+    <div class="project-card" data-category="Stage">
       <img src="Photos/grenouille_coassement.jpg" alt="Aperçu du projet 2">
       <div class="project-info">
         <h2>Parc Botanique de Cornouaille</h2>
@@ -46,7 +58,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="Communication">
       <img src="images/Espressence Logo VF.png" alt="Espressence logo">
       <div class="project-info">
         <h2>Espressence</h2>
@@ -55,7 +67,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="ux">
       <img src="images/RocheJagu.png" alt="logo roche jagu">
       <div class="project-info">
         <h2>La roche Jagu</h2>
@@ -64,7 +76,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="Communication">
       <img src="images/GRP_03_Zippy.png" alt="Aperçu du projet 2">
       <div class="project-info">
         <h2>Zippy</h2>
@@ -73,7 +85,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="ux">
       <img src="images/voeuxIUT.png" alt="Aperçu du projet 2">
       <div class="project-info">
         <h2>Carte de voeux 2025</h2>
@@ -82,7 +94,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="ux">
       <img src="images/carte_jeu_mockup1.png" alt="carte_société">
       <div class="project-info">
         <h2>Hacktivate</h2>
@@ -91,7 +103,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="ux">
       <img src="images/TelArScene.png" alt="tel ar scene">
       <div class="project-info">
         <h2>Application Tal Ar Scène</h2>
@@ -100,7 +112,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="Développement web">
       <img src="images/Locfit_acceuil.png" alt="Aperçu du projet 2">
       <div class="project-info">
         <h2>Locfit</h2>
@@ -110,7 +122,7 @@
     </div>
 
 
-    <div class="project-card">
+    <div class="project-card" data-category="Graphisme">
       <img src="images/Joao Neves - PSG.png" alt="Poster Joao Neves">
       <div class="project-info">
         <h2>Posters sportifs</h2>
@@ -119,7 +131,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="Graphisme">
       <img src="images/IsaacDelusion_CoverAlbum.pdf.png" alt="Aperçu du projet 2">
       <div class="project-info">
         <h2>Cover d'album</h2>
@@ -142,5 +154,41 @@
         });
     }
 });</script>
+<script>
+const searchInput = document.getElementById("searchInput");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projects = document.querySelectorAll(".project-card");
+
+let currentFilter = "all";
+
+function filterProjects() {
+    const searchValue = searchInput.value.toLowerCase();
+
+    projects.forEach(project => {
+        const text = project.textContent.toLowerCase();
+        const category = project.getAttribute("data-category");
+
+        const matchesSearch = text.includes(searchValue);
+        const matchesCategory = currentFilter === "all" || category === currentFilter;
+
+        if (matchesSearch && matchesCategory) {
+            project.style.display = "block";
+        } else {
+            project.style.display = "none";
+        }
+    });
+}
+
+searchInput.addEventListener("keyup", filterProjects);
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelector(".filter-btn.active").classList.remove("active");
+        button.classList.add("active");
+        currentFilter = button.getAttribute("data-filter");
+        filterProjects();
+    });
+});
+</script>
 
 </html>
