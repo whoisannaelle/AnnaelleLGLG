@@ -10,6 +10,32 @@ body {
     background-color: #d8dbad;
   }
   
+body {
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* Layout simple pour mobile */
+header nav {
+  flex-direction: column; /* empile les liens en vertical */
+}
+
+/* À partir de 768px » styles pour tablettes & desktops */
+@media (min-width: 768px) {
+  header nav {
+    flex-direction: row; /* navigation horizontale */
+  }}
+.projects {
+  display: flex;
+  flex-wrap: wrap; /* les éléments passent à la ligne */
+  gap: 20px;
+}
+
+.project-card {
+  flex: 1 1 200px; /* min 200px, prend l’espace disponible */
+}
+
+
   .menu {
     margin-top: 10px;
     width: 90%; 
