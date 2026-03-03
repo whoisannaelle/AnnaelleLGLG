@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (burger) burger.classList.toggle('active');
     if (closeburger) closeburger.classList.toggle('active');
     if (menu) menu.classList.toggle('active');
+    document.body.classList.toggle('menu-active');
   }
 
   [burger, closeburger].forEach(el => {
