@@ -6,30 +6,93 @@ body {
     color: #333;
   }
   
-  header {
-    background-color: #d8dbad;
-  }
   
 body {
   font-size: 16px;
   padding: 20px;
 }
 
-/* Layout simple pour mobile */
-header nav {
-  flex-direction: column; /* empile les liens en vertical */
+
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* À partir de 768px » styles pour tablettes & desktops */
-@media (min-width: 768px) {
-  header nav {
-    flex-direction: row; /* navigation horizontale */
-  }}
-.projects {
-  display: flex;
-  flex-wrap: wrap; /* les éléments passent à la ligne */
-  gap: 20px;
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* ===== BURGER ===== */
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: 0.4s;
+}
+
+/* Animation burger → croix */
+
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media screen and (max-width: 768px) {
+
+    .burger {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .nav.active {
+        transform: translateX(0);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding: 40px;
+        gap: 25px;
+    }
+}
+
 
 .project-card {
   flex: 1 1 200px; /* min 200px, prend l’espace disponible */
@@ -112,6 +175,7 @@ header nav {
     font-weight: bold;
     font-size: 1.3rem;
 }
+
   
   /* Section Compétences */
   .competences {
