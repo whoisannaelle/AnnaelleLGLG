@@ -100,7 +100,7 @@ body.menu-active {
 .menu ul {
     list-style: none;
     display: flex;
-    gap: 100px;
+    gap: 75px;
 
     /* Espacement entre les éléments */
     @media screen and (max-width: 768px) {
