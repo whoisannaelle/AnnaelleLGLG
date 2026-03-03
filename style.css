@@ -112,6 +112,7 @@ body.menu-active {
         justify-content: flex-end;
         align-items: flex-end;
         text-transform: uppercase;
+        margin-bottom: 100px;
     }
 }
 
