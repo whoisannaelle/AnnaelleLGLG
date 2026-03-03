@@ -19,4 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  let burger = document.querySelector('.burger');
+  let closeburger = document.querySelector('.close-burger');
+  let menu = document.querySelector('.menu');
+
+  function toggleMenu() {
+    if (burger) burger.classList.toggle('active');
+    if (closeburger) closeburger.classList.toggle('active');
+    if (menu) menu.classList.toggle('active');
+  }
+
+  [burger, closeburger].forEach(el => {
+    if (el) {
+      el.addEventListener('click', toggleMenu);
+    }
+  });
   
