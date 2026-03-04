@@ -422,7 +422,7 @@ body.menu-active {
             text-align: center;
 
             .text-container {
-                padding: 0;
+                padding: 0px 20px;
             }
         }
     }
@@ -523,7 +523,7 @@ body.menu-active {
     }
 
     to {
-        width: 50%;
+        width: 100%;
     }
 }
 
@@ -576,6 +576,12 @@ body.menu-active {
     .contact-container h1 {
         font-size: 1.5rem;
     }
+}
+
+/* Style pour les projets */
+.container-details{
+    display: flex;
+    justify-content: column;
 }
 
 /* Section 1 : Présentation visuelle */
