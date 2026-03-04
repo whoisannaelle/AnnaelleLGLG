@@ -581,7 +581,7 @@ body.menu-active {
 /* Style pour les projets */
 .container-details{
     display: flex;
-    justify-content: column;
+    flex-direction: column;
 }
 
 /* Section 1 : Présentation visuelle */
