@@ -19,6 +19,7 @@ header {
 
 .burger {
     display: none;
+
     @media screen and (max-width: 768px) {
         position: absolute;
         top: 5px;
@@ -34,6 +35,7 @@ header {
 
 .close-burger {
     display: none;
+
     @media screen and (max-width: 768px) {
         position: absolute;
         top: 5px;
@@ -47,7 +49,8 @@ header {
     }
 }
 
-.burger.active, .close-burger.active {
+.burger.active,
+.close-burger.active {
     @media screen and (max-width: 768px) {
         display: block !important;
     }
@@ -406,11 +409,23 @@ body.menu-active {
     color: #f26444;
 }
 
+/* Style pour la section a propos */
 
 /* Conteneur principal */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        .content {
+            flex-direction: column;
+            text-align: center;
+
+            .text-container {
+                padding: 0;
+            }
+        }
+    }
 }
 
 /* Contenu */
@@ -467,15 +482,29 @@ body.menu-active {
 }
 
 .right-title {
-    width: 25%;
-    text-align: right;
+    width: 87%;
+    text-align: left;
     font-size: 1.5em;
     color: #d92211;
     border-right: 2px solid #d92211;
     white-space: nowrap;
     overflow: hidden;
-    width: 0;
-    animation: typing 4s steps(15, end), blink-caret 0.5s step-end infinite;
+    animation: typing 4s steps(15, end), blink-caret 0.5s step-end 4.5s infinite;
+
+    h2 {
+        margin: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        animation: typingmobile 4s steps(15, end), blink-caret 0.5s step-end 4.5s infinite;
+
+        h2 {
+            margin: 5px;
+            font-size: 1em;
+            text-align: center;
+        }
+    }
 }
 
 @keyframes typing {
@@ -484,7 +513,17 @@ body.menu-active {
     }
 
     to {
-        width: 100%;
+        width: 87%;
+    }
+}
+
+@keyframes typingmobile {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50%;
     }
 }
 
@@ -498,6 +537,7 @@ body.menu-active {
     50% {
         border-color: #d92211;
     }
+
 }
 
 .contact-container {
@@ -536,12 +576,6 @@ body.menu-active {
     .contact-container h1 {
         font-size: 1.5rem;
     }
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* Section 1 : Présentation visuelle */
