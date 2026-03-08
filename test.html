@@ -3,142 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Galerie</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Parc Botanique de Cornouaille - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+        }
+
+        .project-header {
+            text-align: center;
+            padding: 40px 0 20px;
+            background-color: #fff;
+        }
+
+        .project-title {
+            font-size: 3.5em;
+            color: #e74c3c;
+            font-weight: 700;
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .back-link {
+            text-align: left;
+            margin: 20px 0 0 40px;
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .hero-caption {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            margin: -5px 0 40px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .missions-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .missions-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .missions-list li:before {
+            content: "•";
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .skill-pill {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tools-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .tool-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .context-section {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="gallery">
-        <h1>All albums</h1>
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/000000/FFFFFF?text=Image+1')">
-                <img src="images/annaellelglg_pdp.jpg" alt="Image 1">
-            </div>
-            <div class="gallery-item" onclick="openModal('images/Declinaison_courrier.png')">
-                <img src="images/Declinaison_courrier.png" alt="Image 2">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/666666/FFFFFF?text=Image+3')">
-                <img src="https://via.placeholder.com/400x300/666666/FFFFFF?text=Image+3" alt="Image 3">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/999999/FFFFFF?text=Image+4')">
-                <img src="https://via.placeholder.com/400x300/999999/FFFFFF?text=Image+4" alt="Image 4">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/CCCCCC/000000?text=Image+5')">
-                <img src="https://via.placeholder.com/400x300/CCCCCC/000000?text=Image+5" alt="Image 5">
-            </div>
-            <div class="gallery-item" onclick="openModal('https://via.placeholder.com/800x600/FFFFFF/000000?text=Image+6')">
-                <img src="https://via.placeholder.com/400x300/FFFFFF/000000?text=Image+6" alt="Image 6">
-            </div>
+    <a href="#" class="back-link">← Retour aux projets</a>
+
+    <div class="project-header">
+        <h1 class="project-title">Parc Botanique<br>de Cornouaille</h1>
+    </div>
+
+    <img src="votre-image-du-parc.jpg" alt="Parc Botanique de Cornouaille - Grenouille" class="hero-image">
+    <div class="hero-caption">
+        Parc botanique de Cornouaille – Communication digitale et print, médiation culturelle, valorisation du patrimoine végétal.
+    </div>
+     <div class="section">
+        <h2 class="section-title">Contexte</h2>
+        <div class="context-section">
+            <p style="font-size: 1.1em; line-height: 1.8; text-align: justify;">
+                Le Parc Botanique de Cornouaille est un espace dédié à la préservation du patrimoine végétal, à la médiation culturelle et à la recherche scientifique.
+                Mon stage avait pour but de renforcer la communication du parc auprès d'un public varié (famille, scolaires, passionnés de botanique).
+                J'ai contribué à développer une stratégie de communication digitale et print, tout en participant à la valorisation des collections végétales à travers différents supports.
+            </p>
         </div>
-        <button class="load-more">A LOAD MORE</button>
     </div>
 
-    <!-- Fenêtre modale -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
+    <div class="section">
+        <h2 class="section-title">Missions</h2>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <strong>Durée :</strong> 11 semaines | <strong>Lieu :</strong> Parc botanique de Cornouaille
+        </div>
+        <ul class="missions-list">
+            <li><strong>Réseaux sociaux :</strong> Création de posts, stories et vidéos courtes</li>
+            <li><strong>Site web :</strong> Rédaction d'articles</li>
+            <li><strong>Supports visuels :</strong> Affiche, brochures, signalétique</li>
+            <li><strong>Événements :</strong> Organisation d'expositions et ateliers</li>
+            <li><strong>Photographie :</strong> Capture des collections végétales pour le storytelling</li>
+        </ul>
     </div>
 
-    <script src="script.js"></script>
+    <div class="section">
+        <h2 class="section-title">Compétences mobilisées</h2>
+        <div class="skills-container">
+            <div class="skill-pill">Créativité</div>
+            <div class="skill-pill">Autonomie</div>
+            <div class="skill-pill">Esprit d'analyse</div>
+            <div class="skill-pill">Stratégie de communication</div>
+            <div class="skill-pill">Polyvalence</div>
+            <div class="skill-pill">Création de contenus</div>
+            <div class="skill-pill">Photographie</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Outils utilisés</h2>
+        <div class="tools-container">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/2/2a/Logo_Pinterest_2018.svg" alt="Pinterest" class="tool-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop" class="tool-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Adobe_Illustrator_CC_icon.svg" alt="Illustrator" class="tool-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Inkscape_logo.svg" alt="Inkscape" class="tool-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Canva_icon_2021.svg" alt="Canva" class="tool-icon">
+        </div>
+    </div>
+
+   
 </body>
 </html>
-
-<style>body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-.gallery {
-    padding: 20px;
-}
-
-.gallery h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.gallery-item {
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-.load-more {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    cursor: pointer;
-}
-
-.load-more:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-/* Fenêtre modale */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
-}
-
-.close {
-    position: absolute;
-    top: 35px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-</style>
-
-<script>
-    function openModal(imgSrc) {
-    const modal = document.getElementById("myModal");
-    const modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
-    modalImg.src = imgSrc;
-}
-
-function closeModal() {
-    const modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-</script>
